@@ -8,37 +8,35 @@ $(".button").on("click", function(){
 
 // If a user clicks "Read More":
 // Have an extra paragraph show using $.slideDown() or $.show() and change the link to say “Read Less”
-var read;
-read = "";
-
-var addParagraph;
-	addParagraph = "<p>Marshmellow cone peppermint peppermint, popsicle, cherry sorbet butterscotch, blueberry ice. Sorbet nut chocolate sorbet toppings gelato snow cones mint ice. Caramel, chocolate chip, marshmellow froyo, blueberry. Almond frozen peppermint cheesecake, shortcake sherbet popsicle peppermint. Butter vanilla mocha, chunky banana chocolate dessert peppermint orange banana butter cone white chocolate.</p>";
-
-$(".readmore").on("click", function(){
-	$(".readmore").slideDown(1200).before(addParagraph);
-	$(".readmore").html("Read Less");
-	$(".readmore").addClass("readLess");
-	$(".readLess").removeClass("readmore");
-});
-
-
-$(".readLess").on("click", function(){
-	$(addParagraph).html(read);
-	$(".readLess").addClass("readmore");
-	$(".readmore").removeClass("readLess");
-	$(".readmore").html("Read Less");
-
-// })
-
 // If a user clicks "Read Less":
 // Have an extra paragraph hide using $.slideUp() or $.hide() and change the link to say “Read More”
-// var read;
-// read = ""
 
-// $("Read Less").on("click", function(){
-// 	$
-// })
+var read=true;
 
+$(".blog1").on("click", function(){
+	if (read) {
+		$(".par1").slideDown(1200);
+		$(".blog1").text("Read Less");
+		read=false;
+	} 
+	else { 
+		$(".par1").slideUp(1200);
+		$(".blog1").text("Read More");
+		read=true;
+	}
+});
+
+$(".blog2").on("click", function(){
+	if (read=true) {
+		$(".par2").slideDown(1200);
+		$(".readmore .blog2").text("Read Less");
+		read=false;
+	} else { 
+		$(".par2").slideUp(1200);
+		$(".readmore .blog2").text("Read More");
+		read=true;
+	}
+});
 
 
 // • If a user clicks “Learn More” in the sidebar:
@@ -46,3 +44,14 @@ $(".readLess").on("click", function(){
 // • If a user clicks "Learn Less” in the sidebar:
 // - Have an extra paragraph hide using $.slideUp() or $.hide() and change the link to say “Learn More”
 
+$(".learnmore").on("click", function(){
+	if (read=true) {
+		$(".par3").slideDown(1200);
+		$(".learnmore").text("Learn Less");
+		read=false;
+	} else { 
+		$(".par3").slideUp(1200);
+		$(".learnmore").text("Learn More");
+		read=true;
+	}
+});

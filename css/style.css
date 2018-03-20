@@ -225,6 +225,8 @@ footer p {
 /* ADDITIONAL STYLES
 /*******************************************/
 
-
+.hiddentext {
+  display: none;
+}
 
 
